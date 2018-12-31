@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whats_in_the_cupboard',
+    'search',
 ]
 
 MIDDLEWARE = [
