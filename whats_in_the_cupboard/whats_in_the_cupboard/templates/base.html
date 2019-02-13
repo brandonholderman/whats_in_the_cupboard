@@ -15,7 +15,7 @@
           <li><a href="{% url 'home' %}">Home</a></li>
           {% if user.is_authenicated %}
           <li><a href="{% url 'search' %}">Search Recipes</a></li>
-          <li><a href="{% url 'saved' user_id=user.id %}">Saved</a></li>
+          <li><a href="{% url 'saved' user_id=user.id %}">Saved Recipes</a></li>
           {% if user.is_superuser %}
           <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
