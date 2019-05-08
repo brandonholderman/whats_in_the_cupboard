@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whats_in_the_cupboard',
-    'user_profile',
+    'search',
+    'PIL',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Django Registration Settings
+ACCOUNT_ACTIVATION_DAYS = 1
+LOGIN_REDIRECT_URL = 'home'
+if DEBUG:  # pragma: no cover
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

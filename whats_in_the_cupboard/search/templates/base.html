@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-  <link href="{% sass_src '_base.scss' %}" rel="stylesheet" type="text/css" />
+  {% comment %} <link href="{% sass_src '_base.scss' %}" rel="stylesheet" type="text/css" /> {% endcomment %}
   <!-- <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <title>What's In the Cupboard</title>
@@ -21,10 +21,10 @@
           {% if user.is_superuser %}
           <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
-          <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+          {% comment %} <li><a href="{% url 'auth_logout' %}">Logout</a></li>
           {% else %}
           <li><a href="{% url 'registration_register' %}">Sign-up</a></li>
-          <li><a href="{% url 'auth_login' %}">Sign-in</a></li>
+          <li><a href="{% url 'auth_login' %}">Sign-in</a></li> {% endcomment %}
           {% endif %}
         </ul>
       </nav>
