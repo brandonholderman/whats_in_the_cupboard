@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whats_in_the_cupboard',
     'search',
     'PIL',
+    'requests',
 ]
 
 MIDDLEWARE = [
