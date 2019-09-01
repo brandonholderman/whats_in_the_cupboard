@@ -3,9 +3,14 @@ from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
 import requests
+from rest_framework import viewsets          # add this
+from .serializers import SearchSerializer
 import os
 # from mixins import ListModelMixin, CreateModelMixin, GenericAPIView
 
+class HomeView(viewsets.ModelViewSet):
+    serializer_class = SearchSerializer
+    queryset = Search.objects.all()
 
 # def home(request):
     # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
