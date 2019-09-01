@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'search',
     'PIL',
     'requests',
+    'mixins',
 ]
 
 MIDDLEWARE = [
