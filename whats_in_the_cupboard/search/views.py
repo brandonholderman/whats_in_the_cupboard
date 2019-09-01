@@ -7,6 +7,33 @@ import os
 # from mixins import ListModelMixin, CreateModelMixin, GenericAPIView
 
 
+# def home(request):
+    # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
+    # response = requests.get(
+    #     'https://nasaapidimasv1.p.rapidapi.com/getAsteroidStats')
+    # nasadata = response.json()
+    # return render(request, 'home.html', {
+        # 'ip': nasadata['ip'],
+        # 'country': nasadata['country_name'],
+        # 'latitude': nasadata['latitude'],
+        # 'longitude': nasadata['longitude'],
+        # 'api_key': os.environ.get('API_KEY', '')
+# })
+
+
+# def home(request):
+#     url = "https://nasaapidimasv1.p.rapidapi.com/getAsteroidStats"
+#     payload = ""
+#     headers = {
+#         'x-rapidapi-host': "NasaAPIdimasV1.p.rapidapi.com",
+#         'x-rapidapi-key': "38c11f5b86msh745fb6e602101e6p172f76jsn44947788b021",
+#         'content-type': "application/x-www-form-urlencoded"
+#     }
+
+#     response = requests.request("POST", url, data=payload, headers=headers)
+
+#     print(response.text)
+
 # Create your views here.
 # class HomeView(TemplateView):
 #     """
@@ -25,28 +52,6 @@ import os
 #             'ip': geodata['ip'],
 #             'country': geodata['country_name']
 #         })
-
-# def home(request):
-#     ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
-#     response = requests.get('http://freegeoip.net/json/%s' % ip_address)
-#     geodata = response.json()
-#     return render(request, 'core/home.html', {
-#         'ip': geodata['ip'],
-#         'country': geodata['country_name']
-#     })
-
-
-def home(request):
-    ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
-    response = requests.get('http://freegeoip.net/json/%s' % ip_address)
-    geodata = response.json()
-    return render(request, 'core/home.html', {
-        'ip': geodata['ip'],
-        'country': geodata['country_name'],
-        'latitude': geodata['latitude'],
-        'longitude': geodata['longitude'],
-        'api_key': os.environ.get('API_KEY', '')
-    })
 
 # class PostCollection(ListModelMixin,
 #                              CreateModelMixin,
