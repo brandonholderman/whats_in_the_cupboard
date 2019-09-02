@@ -2,7 +2,10 @@ beautifulsoup4==4.8.0
 certifi==2019.3.9
 chardet==3.0.4
 Django==2.2.4
+<<<<<<< HEAD
 django-bootstrap4==1.0.1
+=======
+>>>>>>> 2ee32f7073a250a449265b0e2866483ccfb61627
 django-cors-headers==3.1.0
 django-multiselectfield==0.1.8
 djangorestframework==3.10.2
@@ -19,6 +22,9 @@ PyYAML==5.1.2
 render==1.0.0
 requests==2.21.0
 requirements==0.1
+<<<<<<< HEAD
 soupsieve==1.9.3
+=======
+>>>>>>> 2ee32f7073a250a449265b0e2866483ccfb61627
 sqlparse==0.3.0
 urllib3==1.24.3
