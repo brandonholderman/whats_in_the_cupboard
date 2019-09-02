@@ -22,7 +22,7 @@ from rest_framework import routers
 # from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'favorites', SearchView, 'favorite')
+router.register(r'recipes', SearchView, 'recipe')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

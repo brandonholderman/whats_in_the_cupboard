@@ -2,20 +2,20 @@
 from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from .serializers import SearchSerializer
+from .sample_data import MOCK_DATA
 from .models import Search
 import requests
 import os
-# from mixins import ListModelMixin, CreateModelMixin, GenericAPIView
 
 
-class SearchView(viewsets.ModelViewSet):
-    serializer_class = SearchSerializer
+# class SearchView(viewsets.ModelViewSet):
+#     serializer_class = SearchSerializer
 
- def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    queryset = Search.objects.all()
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         queryset = Search.objects.all()
 
 
 class HomeView(TemplateView):
@@ -26,7 +26,38 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        return context
 
+
+class SearchView(mixins.ListModelMixin):
+
+    serializer_class = SearchSerializer
+
+    def get_queryset(self):
+        response = requests.get(MOCK_DATA)
+        if response.ok:
+            return response
+        else:
+            return None
+
+
+# class PostCollection(ListModelMixin,
+#                              CreateModelMixin,
+#                              GenericAPIView):
+
+#     queryset = Post.objects.all()
+#     serializer_class = PostSerializer
+
+#     def get(self, request, *args, **kwargs):
+#         return self.list(request, *args, **kwargs)
+
+#     def post(self, request, *args, **kwargs):
+#         return self.create(request, *args, **kwargs)
+
+#     def delete(self, request, *args, **kwargs):
+#         return self.destroy(request, *args, **kwargs)
+
+#         return context
 
 # def home(request):
     # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
@@ -58,20 +89,4 @@ class HomeView(TemplateView):
 # Create your views here.
 
 
-# class PostCollection(ListModelMixin,
-#                              CreateModelMixin,
-#                              GenericAPIView):
 
-#     queryset = Post.objects.all()
-#     serializer_class = PostSerializer
-
-#     def get(self, request, *args, **kwargs):
-#         return self.list(request, *args, **kwargs)
-
-#     def post(self, request, *args, **kwargs):
-#         return self.create(request, *args, **kwargs)
-
-#     def delete(self, request, *args, **kwargs):
-#         return self.destroy(request, *args, **kwargs)
-
-#         return context

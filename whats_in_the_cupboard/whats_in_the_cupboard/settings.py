@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'corsheaders',
     'rest_framework',
+    'nose',
 ]
 
 MIDDLEWARE = [

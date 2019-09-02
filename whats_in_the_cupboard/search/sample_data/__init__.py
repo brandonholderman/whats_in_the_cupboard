@@ -1,13 +1,13 @@
-MOCK_ENTRIES = [{
-        "id": "1",
-        "label": "Chicken and Avocado Salad",
-        "favorites": True,
-        "image_url": "static/assets/img/chicken_salad.png",
-        "directions_url": "2014-01-22",
-        "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
-        "calories": 120.0, 
+MOCK_DATA = [{
+    "id": "1",
+    "label": "Chicken and Avocado Salad",
+    "favorites": True,
+    "image_url": "static/assets/img/chicken_salad.png",
+    "directions_url": "2014-01-22",
+    "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
+    "calories": 120.0,
 
-    },
+},
     {
         "id": "2",
         "label": "Chicken and Avocado Salad",
@@ -16,7 +16,7 @@ MOCK_ENTRIES = [{
         "directions_url": "https://natashaskitchen.com/avocado-chicken-salad-recipe/",
         "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
         "calories": 120.0,
-    },
+},
     {
         "id": "3",
         "label": "Chicken and Avocado Salad",
@@ -25,7 +25,7 @@ MOCK_ENTRIES = [{
         "directions_url": "https://natashaskitchen.com/avocado-chicken-salad-recipe/",
         "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
         "calories": 120.0,
-    },
+},
     {
         "id": "4",
         "label": "Chicken and Avocado Salad",
@@ -34,7 +34,7 @@ MOCK_ENTRIES = [{
         "directions_url": "https://natashaskitchen.com/avocado-chicken-salad-recipe/",
         "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
         "calories": 120.0,
-    },
+},
     {
         "id": "5",
         "label": "Chicken and Avocado Salad",
@@ -43,7 +43,7 @@ MOCK_ENTRIES = [{
         "directions_url": "https://natashaskitchen.com/avocado-chicken-salad-recipe/",
         "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
         "calories": 120.0,
-    },
+},
     {
         "id": "6",
         "label": "Chicken and Avocado Salad",
@@ -52,5 +52,5 @@ MOCK_ENTRIES = [{
         "directions_url": "https://natashaskitchen.com/avocado-chicken-salad-recipe/",
         "ingredients": ["Chicken", "Avocado", "Lettuce", "Beans", "Corn", "Lemon", "Olive Oil"],
         "calories": 120.0,
-    },
+},
 ]
