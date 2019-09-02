@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
 from rest_framework.authentication import TokenAuthentication
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, mixins, generics
 from rest_framework.response import Response
 from rest_framework import generics, status
 from rest_framework.views import APIView
@@ -14,12 +14,13 @@ import requests
 import os
 
 
-class SearchView(generics.ListAPIMixin):
+class SearchView(generics.ListAPIView):
     serializer_class = SearchSerializer
     queryset = Search.objects.all()
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['label']
 
 
 class HomeView(TemplateView):

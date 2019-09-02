@@ -22,12 +22,12 @@ from rest_framework import routers
 # from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'recipes', SearchView)
+# router.register(r'recipes', SearchView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
     path('', HomeView.as_view(), name='home'),
-    path('api/', include(router.urls))
     # path('', views.home, name='home'),
     # path('accounts/', include('registration.backends.hmac.urls')),
 ]
