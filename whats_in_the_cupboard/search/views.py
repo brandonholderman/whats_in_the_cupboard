@@ -2,15 +2,28 @@
 from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
-import requests
 from rest_framework import viewsets          # add this
 from .serializers import SearchSerializer
+from .models import Search
+import requests
 import os
 # from mixins import ListModelMixin, CreateModelMixin, GenericAPIView
 
-class HomeView(viewsets.ModelViewSet):
+
+class SearchView(viewsets.ModelViewSet):
     serializer_class = SearchSerializer
     queryset = Search.objects.all()
+
+
+class HomeView(TemplateView):
+    """
+    Home View Class.
+    """
+    template_name = 'static/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
 
 # def home(request):
     # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
@@ -40,23 +53,7 @@ class HomeView(viewsets.ModelViewSet):
 #     print(response.text)
 
 # Create your views here.
-# class HomeView(TemplateView):
-#     """
-#     Home View Class.
-#     """
-#     template_name = 'home.html'
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-
-#         # context['latest_articles'] = Article.objects.all()[:5]
-#         ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
-#         response = requests.get('http://freegeoip.net/json/%s' % ip_address)
-#         geodata = response.json()
-#         return render(context, 'core/home.html', {
-#             'ip': geodata['ip'],
-#             'country': geodata['country_name']
-#         })
 
 # class PostCollection(ListModelMixin,
 #                              CreateModelMixin,

@@ -16,23 +16,20 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path, include
 from django.contrib import admin
-from search import views
+from search.views import HomeView, SearchView
 from rest_framework import routers
 # from django.conf import settings
 # from django.conf.urls.static import static
 
+router = routers.DefaultRouter()
+router.register(r'favorites', SearchView, 'favorite')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
+    path('api/', include(router.urls))
     # path('', views.home, name='home'),
     # path('accounts/', include('registration.backends.hmac.urls')),
-]
-
-router = routers.DefaultRouter()
-router.register(r'todos', views.HomeView, 'todo')
-
-urlpatterns = [
-    path('admin/', admin.site.urls),         path('api/', include(router.urls))
 ]
 
 # if settings.DEBUG:

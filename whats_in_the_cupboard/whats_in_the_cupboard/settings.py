@@ -140,7 +140,9 @@ MEDIA_URL = '/media/'
 
 # Whitelist localhost to serve front end
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://localhost:8080',
 )
 
 # Django Registration Settings
