@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mixins',
     'corsheaders',
     'rest_framework',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
