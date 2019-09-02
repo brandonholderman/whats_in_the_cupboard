@@ -42,12 +42,9 @@ INSTALLED_APPS = [
     'PIL',
     'requests',
     'mixins',
-<<<<<<< HEAD
     'bootstrap4',
-=======
     'corsheaders',
     'rest_framework',
->>>>>>> 2ee32f7073a250a449265b0e2866483ccfb61627
 ]
 
 MIDDLEWARE = [
