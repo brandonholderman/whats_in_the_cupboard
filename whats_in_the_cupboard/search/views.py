@@ -2,20 +2,24 @@
 from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
+from rest_framework import viewsets, mixins
+from rest_framework.response import Response
+from rest_framework import generics, status
+from rest_framework.views import APIView
 from .serializers import SearchSerializer
+from .sample_data import MOCK_DATA
 from .models import Search
 import requests
 import os
-# from mixins import ListModelMixin, CreateModelMixin, GenericAPIView
 
 
-class SearchView(viewsets.ModelViewSet):
+class SearchView(generics.ListAPIMixin):
     serializer_class = SearchSerializer
-
- def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
     queryset = Search.objects.all()
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
 
 
 class HomeView(TemplateView):
@@ -26,36 +30,19 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        return context
 
 
-# def home(request):
-    # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
-    # response = requests.get(
-    #     'https://nasaapidimasv1.p.rapidapi.com/getAsteroidStats')
-    # nasadata = response.json()
-    # return render(request, 'home.html', {
-        # 'ip': nasadata['ip'],
-        # 'country': nasadata['country_name'],
-        # 'latitude': nasadata['latitude'],
-        # 'longitude': nasadata['longitude'],
-        # 'api_key': os.environ.get('API_KEY', '')
-# })
+# class SearchView(mixins.ListAPIMixin):
 
+#     serializer_class = SearchSerializer
 
-# def home(request):
-#     url = "https://nasaapidimasv1.p.rapidapi.com/getAsteroidStats"
-#     payload = ""
-#     headers = {
-#         'x-rapidapi-host': "NasaAPIdimasV1.p.rapidapi.com",
-#         'x-rapidapi-key': "38c11f5b86msh745fb6e602101e6p172f76jsn44947788b021",
-#         'content-type': "application/x-www-form-urlencoded"
-#     }
-
-#     response = requests.request("POST", url, data=payload, headers=headers)
-
-#     print(response.text)
-
-# Create your views here.
+#     def get(self, request):
+#         response = requests.get(MOCK_DATA)
+#         if response.ok:
+#             return response
+#         else:
+#             return None
 
 
 # class PostCollection(ListModelMixin,
@@ -75,3 +62,21 @@ class HomeView(TemplateView):
 #         return self.destroy(request, *args, **kwargs)
 
 #         return context
+
+# def home(request):
+    # ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
+    # response = requests.get(
+    #     'https://nasaapidimasv1.p.rapidapi.com/getAsteroidStats')
+    # nasadata = response.json()
+    # return render(request, 'home.html', {
+        # 'ip': nasadata['ip'],
+        # 'country': nasadata['country_name'],
+        # 'latitude': nasadata['latitude'],
+        # 'longitude': nasadata['longitude'],
+        # 'api_key': os.environ.get('API_KEY', '')
+# })
+
+# Create your views here.
+
+
+

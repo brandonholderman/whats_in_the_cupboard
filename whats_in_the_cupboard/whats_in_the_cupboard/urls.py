@@ -22,7 +22,7 @@ from rest_framework import routers
 # from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'favorites', SearchView, 'favorite')
+router.register(r'recipes', SearchView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +31,8 @@ urlpatterns = [
     # path('', views.home, name='home'),
     # path('accounts/', include('registration.backends.hmac.urls')),
 ]
+
+urlpatterns += router.urls
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL,
