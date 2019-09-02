@@ -7,7 +7,7 @@ from .models import Search
 
 class SearchAdmin(admin.ModelAdmin):
     search_display = ('label', 'favorites', 'image_url', 'directions_url',
-                      'ingredients', 'calories', 'total time')
+                      'ingredients', 'calories')
 
 
 # Register your models here.

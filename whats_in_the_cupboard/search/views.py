@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
-from rest_framework import viewsets          # add this
+from rest_framework import viewsets
 from .serializers import SearchSerializer
 from .models import Search
 import requests
@@ -12,6 +12,9 @@ import os
 
 class SearchView(viewsets.ModelViewSet):
     serializer_class = SearchSerializer
+
+ def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
     queryset = Search.objects.all()
 
 

@@ -1,10 +1,11 @@
 # whats_in_the_cupboard
 
 **Author**: Brandon Holderman
+
 **Version**: 0.0.1
 
 ## Overview
-This website will be an imgur analog, made to for use in learning how to use the Django web framework.
+What's in the cupboard is search engine where users can enter in food items they have at home and the Edamam recipe API will return results that include those items.
 
 ## Getting Started
 Eventually this will simply be a URL that you can go to to use the website.
