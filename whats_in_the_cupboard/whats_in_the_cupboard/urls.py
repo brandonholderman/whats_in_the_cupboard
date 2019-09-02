@@ -15,15 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.urls import path, include
-from search import views
 from django.contrib import admin
+from search.views import HomeView, SearchView
+from rest_framework import routers
 # from django.conf import settings
 # from django.conf.urls.static import static
 
+router = routers.DefaultRouter()
+router.register(r'favorites', SearchView, 'favorite')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', HomeView.as_view(), name='home'),
-    path('', views.home, name='home'),
+    path('', HomeView.as_view(), name='home'),
+    path('api/', include(router.urls))
+    # path('', views.home, name='home'),
     # path('accounts/', include('registration.backends.hmac.urls')),
 ]
 
