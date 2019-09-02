@@ -1,26 +1,25 @@
 {% block content %}
-<!DOCTYPE html>
-<html>
+{% load static %}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>What's in the Cupboard</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="assets/css/Article-Clean.css">
-    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="assets/css/Header-Blue.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="static/assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="static/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="static/assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="static/assets/css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="static/assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="static/assets/css/styles.css">
 </head>
 
 <body style="background-color: #ffffff;">
@@ -49,8 +48,8 @@
                         <p>The simplest way to decide what you're going to cook!</p>
                     </div>
                     <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
-                        <div class="iphone-mockup"><img class="device" src="assets/img/iphone.svg">
-                            <div class="screen"></div>
+                        {% comment %} <div class="iphone-mockup"><img class="device" src="static/assets/img/chicken_salad.png">
+                            <div class="screen"></div> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -63,7 +62,7 @@
             <div class="row projects">
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="static/assets/img/desk.jpg"></a></div>
                         <div class="col">
                             <h3 class="name">Project Name</h3>
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
@@ -72,7 +71,7 @@
                 </div>
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="static/assets/img/building.jpg"></a></div>
                         <div class="col">
                             <h3 class="name">Project Name</h3>
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
@@ -81,7 +80,7 @@
                 </div>
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="static/assets/img/loft.jpg"></a></div>
                         <div class="col">
                             <h3 class="name">Project Name</h3>
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
@@ -90,7 +89,7 @@
                 </div>
                 <div class="col-sm-6 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/minibus.jpeg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="static/assets/img/minibus.jpeg"></a></div>
                         <div class="col">
                             <h3 class="name">Project Name</h3>
                             <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.</p>
@@ -116,6 +115,4 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
-</html>
 {% endblock %}
