@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 
-<!-- {% load static %} -->
+{% load static %}
 
 <html lang="en">
 <head>
-  {% comment %} <link href="{% sass_src '_base.scss' %}" rel="stylesheet" type="text/css" /> {% endcomment %}
-  <!-- <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <link href="{% sass_src '_base.scss' %}" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>What's In the Cupboard</title>
 </head>
 <body>
@@ -21,10 +21,10 @@
           {% if user.is_superuser %}
           <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
-          {% comment %} <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+          <li><a href="{% url 'auth_logout' %}">Logout</a></li>
           {% else %}
           <li><a href="{% url 'registration_register' %}">Sign-up</a></li>
-          <li><a href="{% url 'auth_login' %}">Sign-in</a></li> {% endcomment %}
+          <li><a href="{% url 'auth_login' %}">Sign-in</a></li> 
           {% endif %}
         </ul>
       </nav>
@@ -40,5 +40,48 @@
     <h3>No Content</h3>
     {% endblock content%}
   </main>
+</body>
+</html> {% endcomment %}
+
+{% load static %}
+{% load sass_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="{% sass_src '_base.css' %}" rel="stylesheet" type="text/css" />
+  {% comment %} <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css"> {% endcomment %}
+  <title>Hamburger Menu Overlay</title>
+</head>
+<body>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="showcase">
+    <div class="container showcase-inner">
+      <h1>Welcome</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maiores sint impedit delectus quam molestiae explicabo cum facere ratione veritatis.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </header>
 </body>
 </html>

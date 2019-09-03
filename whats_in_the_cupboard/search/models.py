@@ -9,6 +9,7 @@ from PIL import Image
 # Create your models here.
 class Search(models.Model):
     label = models.CharField(max_length=200, blank=True, null=True)
+    path = models.FileField(upload_to='recipes/')
     favorites = models.FileField(upload_to='favorites/')
     image_url = models.ImageField(
         default=timezone.now, upload_to='recipe_img/')

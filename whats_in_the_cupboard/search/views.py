@@ -12,17 +12,17 @@ import os
 
 class SearchView(viewsets.ModelViewSet):
     serializer_class = SearchSerializer
-
- def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
     queryset = Search.objects.all()
+
+#  def get_context_data(self, **kwargs):
+#     context = super().get_context_data(**kwargs)
 
 
 class HomeView(TemplateView):
     """
     Home View Class.
     """
-    template_name = 'index.html'
+    template_name = 'base.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
